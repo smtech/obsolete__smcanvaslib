@@ -5,7 +5,7 @@ define('APP_URL', 'http://' . $_SERVER['SERVER_NAME'] . preg_replace('|(.*)/' . 
 define('APP_PATH', preg_replace('|(.*)/' . basename(__DIR__) . '|', '$1', realpath(__DIR__)));
 
 define('SMCANVASLIB_URL', APP_URL . '/smcanvaslib');
-define('SMCANVASLIB_PATH', APP_PATH . 'smcanvaslib');
+define('SMCANVASLIB_PATH', APP_PATH . '/smcanvaslib');
 
 /* customize generated pages */
 define('SCHOOL_NAME', 'St. Mark&rsquo;s School');
