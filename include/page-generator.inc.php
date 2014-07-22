@@ -23,9 +23,9 @@ function displayPage($content) {
 <head>
 	<title>' . TOOL_NAME . '</title>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="' . APP_URL . '/javascript/lightbox-2.6.min.js"></script>
-	<link rel="stylesheet" href="' . APP_URL . '/css/lightbox.php" />
-	<link rel="stylesheet" href="' . APP_URL . '/css/script-ui.php" />
+	<script src="' . SMCANVASLIB_URL . '/javascript/lightbox-2.6.min.js"></script>
+	<link rel="stylesheet" href="' . SMCANVASLIB_URL . '/css/lightbox.php" />
+	<link rel="stylesheet" href="' . SMCANVASLIB_URL . '/css/script-ui.php" />
 </head>
 <body>' .
 buildPageSection('<h1>' . TOOL_NAME . '</h1>

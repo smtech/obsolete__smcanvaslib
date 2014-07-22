@@ -1,5 +1,7 @@
 <?php
 
+// TODO Sigh, Lightbox should really be a submodule too...
+
 require_once(__DIR__ . '/../config.inc.php');
 
 header('Content-type: text/css');
@@ -9,7 +11,7 @@ header('X-Content-Type-Options: nosniff'); // because IE is not trusting
 
 /* line 7, ../sass/lightbox.sass */
 body:after {
-  content: url(<?= APP_URL ?>/image/lightbox/close.png) url(<?= APP_URL ?>/image/lightbox/loading.gif) url(<?= APP_URL ?>/image/lightbox/prev.png) url(<?= APP_URL ?>/image/lightbox/next.png);
+  content: url(<?= SMCANVASLIB_URL ?>/image/lightbox/close.png) url(<?= SMCANVASLIB_URL ?>/image/lightbox/loading.gif) url(<?= SMCANVASLIB_URL ?>/image/lightbox/prev.png) url(<?= SMCANVASLIB_URL ?>/image/lightbox/next.png);
   display: none;
 }
 
@@ -93,7 +95,7 @@ body:after {
   width: 32px;
   height: 32px;
   margin: 0 auto;
-  background: url(<?= APP_URL ?>/image/lightbox/loading.gif) no-repeat;
+  background: url(<?= SMCANVASLIB_URL ?>/image/lightbox/loading.gif) no-repeat;
 }
 
 /* line 63, ../sass/lightbox.sass */
@@ -132,7 +134,7 @@ body:after {
 }
 /* line 87, ../sass/lightbox.sass */
 .lb-prev:hover {
-  background: url(<?= APP_URL ?>/image/lightbox/prev.png) left 48% no-repeat;
+  background: url(<?= SMCANVASLIB_URL ?>/image/lightbox/prev.png) left 48% no-repeat;
 }
 
 /* line 90, ../sass/lightbox.sass */
@@ -142,7 +144,7 @@ body:after {
 }
 /* line 93, ../sass/lightbox.sass */
 .lb-next:hover {
-  background: url(<?= APP_URL ?>/image/lightbox/next.png) right 48% no-repeat;
+  background: url(<?= SMCANVASLIB_URL ?>/image/lightbox/next.png) right 48% no-repeat;
 }
 
 /* line 96, ../sass/lightbox.sass */
@@ -197,7 +199,7 @@ body:after {
   float: right;
   width: 30px;
   height: 30px;
-  background: url(<?= APP_URL ?>/image/lightbox/close.png) top right no-repeat;
+  background: url(<?= SMCANVASLIB_URL ?>/image/lightbox/close.png) top right no-repeat;
   text-align: right;
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
