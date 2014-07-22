@@ -1,7 +1,7 @@
 <?php
 
 require_once(__DIR__ . '/../../config.inc.php');
-require_once(APP_PATH . '/include/debug.inc.php');
+require_once(SMCANVASLIB_PATH . '/include/debug.inc.php');
 
 if(!defined('API_CLIENT_ERROR_RETRIES')) {
 	define('API_CLIENT_ERROR_RETRIES', 5);

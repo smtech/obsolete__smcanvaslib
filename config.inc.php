@@ -1,8 +1,10 @@
 <?php
 
 /* this will break if there are mod_rewrites, but will do for now... */
-define('APP_URL', 'http://' . $_SERVER['SERVER_NAME'] . str_replace(realpath($_SERVER['DOCUMENT_ROOT']), '', realpath(__DIR__)));
-define('APP_PATH', realpath(__DIR__));
+define('APP_URL', 'http://' . $_SERVER['SERVER_NAME'] . preg_replace('|(.*)/' . basename(__DIR__) . '|', '$1', str_replace(realpath($_SERVER['DOCUMENT_ROOT']), '', realpath(__DIR__))));
+define('APP_PATH', preg_replace('|(.*)/' . basename(__DIR__) . '|', '$1', realpath(__DIR__)));
+
+define('SMCANVASLIB_PATH', realpath(__DIR__));
 
 /* customize generated pages */
 define('SCHOOL_NAME', 'St. Mark&rsquo;s School');
