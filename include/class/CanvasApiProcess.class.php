@@ -35,7 +35,7 @@ define('CANVAS_API_EXCEPTION_SERVER', 2);
 // TODO: we could extend this to include more specificity about the Pest exceptions...
 
 /* we use Pest to interact with the RESTful API */
-require_once(APP_PATH . '/include/Pest.php');
+require_once(APP_PATH . '/include/pest/Pest.php');
 
 /* handles HTML page generation */
 require_once(APP_PATH . '/include/page-generator.inc.php');
