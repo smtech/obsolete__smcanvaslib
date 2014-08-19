@@ -1,3 +1,6 @@
 [submodule "include/pest"]
 	path = include/pest
 	url = git@github.com:educoder/pest.git
+[submodule "include/pwgen-php"]
+	path = include/pwgen-php
+	url = git@github.com:roderik/pwgen-php.git
