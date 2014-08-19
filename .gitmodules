@@ -4,3 +4,6 @@
 [submodule "include/pwgen-php"]
 	path = include/pwgen-php
 	url = git@github.com:roderik/pwgen-php.git
+[submodule "include/phpgraphlib"]
+	path = include/phpgraphlib
+	url = git@github.com:elliottb/phpgraphlib.git
