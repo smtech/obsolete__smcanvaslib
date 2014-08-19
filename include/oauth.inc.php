@@ -1,9 +1,7 @@
 <?php
-
 require_once(__DIR__ . '/../../.ignore.calendar-ics-authentication.inc.php');
 require_once(__DIR__ . '/../../config.inc.php');
 require_once(SMCANVASLIB_PATH . '/include/debug.inc.php');
-define('DEBUGGING', DEBUGGING_LOG);
 require_once(SMCANVASLIB_PATH . '/include/page-generator.inc.php');
 require_once(SMCANVASLIB_PATH . '/include/canvas-api.inc.php');
 require_once(SMCANVASLIB_PATH . '/include/mysql.inc.php');
@@ -31,8 +29,9 @@ define('OAUTH_IDENTITY_CODE_REQUESTED', 2); /* #2 completed */
 define('OAUTH_TOKEN_CODE_REQUESTED', 3); /* #6 completed */
 define('OAUTH_COMPLETE', 4); /* user cached with access token and
 								$_SESSION updated -- after #4 or #8 */
-if (!isset($argc))
-session_start();
+if (!isset($argc)) {
+	session_start();
+}
 
 /**
  * Ask the user to enter their Canvas instance URL. Updates the OAuth
