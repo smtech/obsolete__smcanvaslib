@@ -1,9 +1,12 @@
 [submodule "include/pest"]
 	path = include/pest
 	url = git@github.com:educoder/pest.git
+	fetchRecurseSubmodules = true
 [submodule "include/pwgen-php"]
 	path = include/pwgen-php
 	url = git@github.com:roderik/pwgen-php.git
+	fetchRecurseSubmodules = true
 [submodule "include/phpgraphlib"]
 	path = include/phpgraphlib
 	url = git@github.com:elliottb/phpgraphlib.git
+	fetchRecurseSubmodules = true
