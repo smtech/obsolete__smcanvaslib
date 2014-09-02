@@ -12,29 +12,29 @@ if(!defined('CACHE_DURATION')) {
 }
 
 /**
- * Retrieve cached data, false if no cache
+ * Return cached data if present, false otherwise
  **/
 function getCache($key, $id, $cache) {
-	$acceptableCache = date('Y-m-d H:i:s',time() - CACHE_DURATION);
+	$acceptableCache = date('Y-m-d H:i:s', time() - CACHE_DURATION);
 	if ($response = mysqlQuery("
-			SELECT *
-				FROM `" . CACHE_TABLE . "`
-				WHERE
-					`{$key}` = '{$id}' AND
-					`timestamp` > '{$acceptableCache}'
-		")) {
-		if ($cacheData = $response->fetch_assoc()) {
-			return unserialize($cacheData[$cache])
-		}
+		SELECT *
+			FROM `" . CACHE_TABLE . "`
+			WHERE
+				`{$key}` = '{$id}' AND
+				`timestamp` > '{$acceptableCache}'
+	")) {
+		if ($cachedData = $response->fetch_assoc()) {
+			return unserialize($cachedData[$cache]);
+		}	
 	}
 	
 	return false;
 }
 
 /**
- * Cache some data for later retrieval
+ * Cache some data
  **/
-function setCache($key, $id, $cache, $cacheData) {
+function setCache($key, $id, $cache, $cachedData) {
 	mysqlQuery("
 		DELETE *
 			FROM `" . CACHE_TABLE . "`
@@ -42,13 +42,14 @@ function setCache($key, $id, $cache, $cacheData) {
 				`{$key}` = '{$id}'
 	");
 	mysqlQuery("
-		INSERT INTO `" . CACHE_TABLE . "`
+		INSERT
+			INTO `" . CACHE_TABLE . "`
 			(
 				`{$key}`,
 				`{$cache}`
 			) VALUES (
 				'{$id}',
-				'" . serialize($cacheData) . "'
+				'" . serialize($cachedData) . "'
 			)
 	");
 }
