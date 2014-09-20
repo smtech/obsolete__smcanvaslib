@@ -120,14 +120,27 @@ class CanvasApiProcess {
 			$retry = false;
 			try {
 				if ($paginated) {
-					$response = $this->pagePest->$verb($path, $data, $this->buildCanvasAuthorizationHeader());					
+					switch($verb) {
+						case CANVAS_API_DELETE:
+							$response = $this->pagePest->$verb($path, $this->buildCanvasAuthorizationHeader());
+							break;
+						default:
+							$response = $this->pagePest->$verb($path, $data, $this->buildCanvasAuthorizationHeader());			
+					}
 				} else {
 					$this->pagePest = $this->pest;
 					$this->lastCall['verb'] = $verb;
 					$this->lastCall['path'] = $path;
 					$this->lastCall['data'] = $data;
 					$this->lastCall['throwsExceptions'] = $throwsExceptions;
-					$response = $this->pest->$verb($path, $data, $this->buildCanvasAuthorizationHeader());
+					
+					switch($verb) {
+						case CANVAS_API_DELETE:
+							$response = $this->pest->$verb($path, $this->buildCanvasAuthorizationHeader());
+							break;
+						default:
+							$response = $this->pest->$verb($path, $data, $this->buildCanvasAuthorizationHeader());			
+					}
 				}
 			} catch (Pest_ServerError $e) {
 				if ($throwsExceptions & CANVAS_API_EXCEPTION_SERVER) {
