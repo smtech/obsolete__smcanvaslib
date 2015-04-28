@@ -140,7 +140,7 @@ table.striped tr:nth-child(even) {
 
 #content {
 	margin: 0 auto;
-	max-width: 7in;
+	/* max-width: 7in; */
 	text-align: left;
 }
 
