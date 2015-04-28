@@ -7,7 +7,7 @@ header('X-Content-Type-Options: nosniff'); // because IE is not trusting
 
 ?>
 
-body {
+body, table {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 10pt;
 	margin: 0;
@@ -116,6 +116,10 @@ input[type=text] {
 
 input[type=radio], input[type=checkbox] {
 	display: inline;
+}
+
+table.striped tr:nth-child(even) {
+	background: #d6ecfc; /* match sidebar highlights */
 }
 
 /* content wrapper section */
