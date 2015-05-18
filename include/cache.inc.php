@@ -36,7 +36,7 @@ function getCache($key, $id, $cache) {
  **/
 function setCache($key, $id, $cache, $cachedData) {
 	mysqlQuery("
-		DELETE *
+		DELETE
 			FROM `" . CACHE_TABLE . "`
 			WHERE
 				`{$key}` = '{$id}'
