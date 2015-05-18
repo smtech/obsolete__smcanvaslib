@@ -35,12 +35,7 @@ function getCache($key, $id, $cache) {
  * Cache some data
  **/
 function setCache($key, $id, $cache, $cachedData) {
-	mysqlQuery("
-		DELETE
-			FROM `" . CACHE_TABLE . "`
-			WHERE
-				`{$key}` = '{$id}'
-	");
+	resetCache($key, $id);
 	mysqlQuery("
 		INSERT
 			INTO `" . CACHE_TABLE . "`
@@ -51,6 +46,18 @@ function setCache($key, $id, $cache, $cachedData) {
 				'{$id}',
 				'" . serialize($cachedData) . "'
 			)
+	");
+}
+
+/**
+ * Reset a cache
+ **/
+function resetCache($key, $id) {
+	mysqlQuery("
+		DELETE
+			FROM `" . CACHE_TABLE . "`
+			WHERE
+				`{$key}` = '{$id}'
 	");
 }
 
